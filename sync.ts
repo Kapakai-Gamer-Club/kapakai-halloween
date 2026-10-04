@@ -1,4 +1,4 @@
-namespace kapakaiHalloweenSync {
+namespace kapakai.sync {
 
     let pendingMotion = ""   // movimiento pendiente de ejecutar
 

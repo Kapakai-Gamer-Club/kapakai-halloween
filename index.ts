@@ -104,11 +104,16 @@ namespace kapakai {
 // ---------------------------------------------------------
 
 //% color="#FF7518" icon="\uf6e8" block="Kapakai Halloween"
-namespace kapakaiHalloween {
+namespace kapakai.halloween {
     // vacío — MakeCode solo necesita ver el namespace
 }
 
 //% color="#FF9F43" icon="\uf6e7" block="Kapakai Halloween Sync"
-namespace kapakaiHalloweenSync {
+namespace kapakai.sync {
     // vacío — MakeCode solo necesita ver el namespace
+}
+
+//% block="Kapakai Radio" color="#6c5ce7" icon="\uf1eb"
+namespace kapakai.radio {
+    // bloques de radio
 }

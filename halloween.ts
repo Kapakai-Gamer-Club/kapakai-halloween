@@ -1,4 +1,4 @@
-namespace kapakaiHalloween {
+namespace kapakai.halloween {
 
     let personalGroup = 0      // grupo del joven
     let eventGroup = 99        // grupo global del evento

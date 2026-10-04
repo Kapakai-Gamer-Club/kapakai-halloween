@@ -1,4 +1,4 @@
-namespace kapakaiRadio {
+namespace kapakai.radio {
 
     // ---------------------------------------------------------
     // ENUM PARA DROPDOWN DE COMANDOS DE RADIO

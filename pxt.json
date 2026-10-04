@@ -6,9 +6,11 @@
         "core": "*"
     },
     "files": [
+        "main.ts",
         "index.ts",
-        "kapakaiHalloween.ts",
-        "kapakaiHalloweenSync.ts",
+        "halloween.ts",
+        "sync.ts",
+        "radio.ts",
         "servoDriver.ts",
         "motionPlayer.ts",
         "motions.ts"
