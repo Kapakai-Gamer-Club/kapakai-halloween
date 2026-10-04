@@ -2,11 +2,6 @@
     "name": "kapakai-robot",
     "version": "1.0.0",
     "description": "Kapakai Robot: movimientos, radio, sincronización y modo Halloween para micro:bit.",
-    "icon": "assets/icon.png",
-    "repository": {
-    "type": "git",
-    "url": "https://github.com/Kapakai-Gamer-Club/kapakai-halloween"
-    },
     "dependencies": {
         "core": "*",
         "radio": "*"
@@ -20,6 +15,18 @@
         "motions.ts",
         "motionPlayer.ts",
         "servoDriver.ts"
-    ]
-   
+    ],
+    "targetVersions": {
+        "target": "9.0.12",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
+    "icon": "assets/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Kapakai-Gamer-Club/kapakai-halloween"
+    }
 }
