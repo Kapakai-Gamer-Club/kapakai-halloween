@@ -1,22 +1,19 @@
 {
     "name": "kapakai-robot",
-    "description": "Robot animation library for 8-servo kapakai robot",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "description": "Kapakai Robot: movimientos, radio, sincronización y modo Halloween para micro:bit.",
+    "icon": "icon.png",
     "dependencies": {
         "core": "*"
     },
     "files": [
-        "main.ts",
         "index.ts",
         "kapakai.ts",
         "halloween.ts",
         "sync.ts",
         "radioControl.ts",
-        "servoDriver.ts",
+        "motions.ts",
         "motionPlayer.ts",
-        "motions.ts"
-    ],
-    "testFiles": [],
-    "supportedTargets": ["microbit"],
-    "preferredEditor": "blocks"
+        "servoDriver.ts"
+    ]
 }
