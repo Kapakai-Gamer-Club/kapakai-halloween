@@ -1,183 +1,153 @@
-##  Kapakai Robot — Extensión para micro:bit  
-Sistema modular para controlar el robot Kapakai de 8 servos, incluyendo:
+# **Kapakai Mini Robot Extension for micro:bit**  
+*A playful tool to awaken learning styles, creativity and imagination in every young learner.*
 
-- **Movimientos básicos y avanzados**
-- **Sistema Halloween (posesión, bruja, evento global)**
-- **Coreografías sincronizadas (STEP + TICK)**
-- **Control por radio (movimientos, servos, comandos narrativos)**
+Kapakai Mini is an **8‑servo educational robot** designed for children and youth **up to 16 years old**.  
+It is part of the **Kapakai Academy learning ecosystem**, which helps young people discover how they learn best — through movement, play, storytelling and hands‑on exploration.
 
-Compatible con **MakeCode para micro:bit**.
+This MakeCode extension gives micro:bit the ability to control Kapakai Mini using expressive robot motions.  
+But the deeper purpose is educational:
 
----
+### Kapakai Mini helps activate natural learning styles  
+- learners who understand by **doing**  
+- learners who understand by **seeing**  
+- learners who understand by **hearing**  
+- learners who understand by **imagining**  
 
-#  Arquitectura de la extensión
-
-La extensión está organizada en **4 módulos**, cada uno con su propia categoría de bloques en MakeCode:
-
----
-
-##  1. Kapakai Robot  
-**Namespace:** `kapakai`  
-**Archivo:** `index.ts`, `motions.ts`, `motionPlayer.ts`, `servoDriver.ts`
-
-Incluye:
-
-- Movimientos básicos (caminar, retroceder)  
-- Movimientos de brazos  
-- Movimientos de piernas  
-- Movimientos especiales  
-- Movimientos zombie / liberación  
-- Control directo de servos  
-- Enums para dropdowns  
+Without labels, without tests, and without pressure — simply through **playful robotics**.
 
 ---
 
-##  2. Kapakai Halloween  
-**Namespace:** `kapakai.halloween`  
-**Archivo:** `halloween.ts`
+## **Why Kapakai Mini?**
+Children and youth learn in different ways.  
+Some need to move.  
+Some need to see patterns.  
+Some need rhythm.  
+Some need stories.
 
-Sistema narrativo para el evento Halloween:
+Kapakai Mini uses **robot motion** as a bridge to activate these learning pathways.
 
-- Entrar en zona zombie (posesión)  
-- Salir de zona zombie  
-- Entrar en evento global  
-- Salir de evento global  
-- Configurar grupos:
-  - grupo personal  
-  - grupo evento  
-  - grupo bruja  
-- Ejecutar movimientos según modo:
-  - NORMAL  
-  - WITCH  
-  - EVENT  
+With simple MakeCode blocks, learners can:
 
----
+- create robot dances  
+- build stories with movement  
+- explore timing and sequences  
+- collaborate with classmates  
+- express emotions through motion  
+- discover how they learn best  
 
-##  3. Kapakai Sync  
-**Namespace:** `kapakai.sync`  
-**Archivo:** `sync.ts`
-
-Coreografías sincronizadas:
-
-- Enviar **STEP** (movimiento pendiente)  
-- Enviar **TICK** (ejecutar movimiento)  
-- Enviar **RESET**  
-- Activar receptor de sincronización  
-- Sistema de `pendingMotion`  
-- Reset automático antes del TICK  
+No programming experience is required.
 
 ---
 
-##  4. Kapakai Radio  
-**Namespace:** `kapakai.radio`  
-**Archivo:** `radio.ts`
+## **Who Is This For?**
+Kapakai Mini is designed for:
 
-Control por radio:
+- primary school teachers  
+- lower‑secondary educators  
+- youth mentors  
+- librarians running maker activities  
+- Erasmus+ creative technology partners  
+- children and youth aged 6–16  
 
-- Enviar movimientos desde dropdown  
-- Enviar servo + ángulo  
-- Activar receptor de radio  
-- Interpretar comandos narrativos:
-  - WALK_FORWARD  
-  - ARMS_RAISE  
-  - KICK_LEFT  
-  - NEUTRAL  
-  - BREATHING  
-  - SERVO:index:angle  
+If you can drag blocks, you can use Kapakai Mini.
 
 ---
 
-#  Archivos incluidos
+## **How to Install the Extension**
+1. Open **Microsoft MakeCode** for micro:bit  
+2. Create a new project  
+3. Click **Extensions**  
+4. Paste the repository URL:
 
 ```
-main.ts
-index.ts
-halloween.ts
-sync.ts
-radio.ts
-servoDriver.ts
-motionPlayer.ts
-motions.ts
-pxt.json
+https://github.com/Kapakai-Gamer-Club/kapakai-halloween
 ```
 
----
-
-#  Instalación
-
-En MakeCode:
-
-1. Abrir un proyecto nuevo  
-2. Ir a **Extensions**  
-3. Pegar la URL del repositorio GitHub  
-4. Esperar a que aparezcan las categorías:
-   - Kapakai Robot  
-   - Kapakai Halloween  
-   - Kapakai Sync  
-   - Kapakai Radio  
+5. The Kapakai Mini blocks will appear with the Kapakai icon.
 
 ---
 
-#  Ejemplo básico
+## **Available Motions**
+Kapakai Mini includes a set of predefined motions.  
+Each motion is a small “animation” made of timed servo positions.
 
+| Motion Name       | Description                              |
+|-------------------|-------------------------------------------|
+| WalkForward       | Simple forward walking cycle              |
+| WalkBack          | Backward walking cycle                    |
+| RaiseArms         | Both arms up                              |
+| WaveLeft          | Friendly wave with left arm               |
+| WaveRight         | Friendly wave with right arm              |
+| KickLeft          | Left leg kick                             |
+| KickRight         | Right leg kick                            |
+| Neutral           | Reset all servos to neutral position      |
+| Breathing         | Gentle breathing motion                   |
+| ZombieWalk        | Halloween‑themed zombie movement          |
+| LiberationJoy     | Expressive celebratory motion             |
+
+These motions are intentionally **simple, expressive and easy to understand**.
+
+---
+
+## **Example: Make the Robot Walk Forward**
 ```ts
-kapakai.playBasic(kapakai.MotionBasic.WalkForward)
-kapakai.halloween.enableHalloweenSystem()
-kapakai.sync.enableReceiver()
-kapakai.radio.enableReceiver()
+motionPlayer.play("WalkForward")
 ```
 
----
+Learners can experiment freely:
 
-#  Ejemplo Halloween
+- What happens if we repeat the motion?  
+- What happens if we mix motions?  
+- Can we tell a story with the robot?  
+- Can two robots move together?  
 
-```ts
-kapakai.halloween.setPersonalGroup(12)
-kapakai.halloween.setWitchGroup(55)
-kapakai.halloween.setEventGroup(99)
-
-kapakai.halloween.enableHalloweenSystem()
-```
+This exploration activates creativity and learning styles naturally.
 
 ---
 
-#  Ejemplo Sync
+## **Radio Synchronization**
+Kapakai Mini includes optional radio features so multiple robots can:
 
-```ts
-kapakai.sync.init(42)
-kapakai.sync.sendStep(kapakai.MotionZombie.ZombieWalk)
-kapakai.sync.sendTick()
-```
+- move together  
+- follow a leader robot  
+- perform group dances  
+- create collaborative activities  
 
----
-
-#  Ejemplo Radio
-
-```ts
-kapakai.radio.init(7)
-kapakai.radio.sendCommand(kapakai.radio.RadioCommand.ArmsRaise)
-kapakai.radio.sendServoAngle(3, -45)
-```
+Perfect for teamwork.
 
 ---
 
-#  Estructura de categorías en MakeCode
-
-- **Kapakai Robot** → movimientos y servos  
-- **Kapakai Halloween** → modos narrativos  
-- **Kapakai Sync** → coreografías sincronizadas  
-- **Kapakai Radio** → control remoto  
+## **Halloween Mode**
+The extension includes a playful “Zombie Walk” motion and optional Halloween behaviors for seasonal events — ideal for storytelling and themed activities.
 
 ---
 
-#  Notas técnicas
+## **About Kapakai Academy**
+Kapakai Academy is a learning framework focused on:
 
-- Todos los módulos usan el namespace raíz `kapakai`.  
-- Los sub-namespaces (`kapakai.halloween`, `kapakai.sync`, `kapakai.radio`) crean categorías separadas.  
-- No se usan namespaces duplicados.  
-- Todos los archivos están listados en `pxt.json`.  
-- `main.ts` está vacío para compatibilidad con MakeCode.  
+- strengths‑based mentoring  
+- emotional safety  
+- creative digital skills  
+- inclusive youth participation  
+- multicultural collaboration  
+
+Kapakai Mini is part of this ecosystem, helping young people express themselves through movement, robotics and imagination.
 
 ---
 
+## **Credits**
+Kapakai Academy  
+Kapakai Gamer Club  
+Family Craft Day  
+Erasmus+ partners  
+micro:bit community  
+
+---
+
+## **Read this README in other languages**
+- 🇳🇴 Norsk — README.no.md  
+- 🇪🇸 Español — README.es.md  
+- 🇷🇴 Română — README.ro.md  
+
+---
 
