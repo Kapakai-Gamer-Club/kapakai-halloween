@@ -1,0 +1,17 @@
+{
+    "name": "kapakai-robot",
+    "description": "Robot animation library for 8-servo kapakai robot",
+    "version": "0.0.1",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "index.ts",
+        "servoDriver.ts",
+        "motionPlayer.ts",
+        "motions.ts"
+    ],
+    "testFiles": [],
+    "supportedTargets": ["microbit"],
+    "preferredEditor": "blocks"
+}
