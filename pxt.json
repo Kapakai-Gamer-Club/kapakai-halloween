@@ -10,6 +10,7 @@
         "index.ts",
         "kapakai.ts",
         "halloween.ts",
+        "icon.png",
         "sync.ts",
         "radioControl.ts",
         "motions.ts",
