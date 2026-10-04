@@ -1,6 +1,6 @@
 {
     "name": "kapakai-robot",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "Kapakai Robot: movimientos, radio, sincronización y modo Halloween para micro:bit.",
     "dependencies": {
         "core": "*",
