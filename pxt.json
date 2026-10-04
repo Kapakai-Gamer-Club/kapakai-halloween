@@ -7,6 +7,8 @@
     },
     "files": [
         "index.ts",
+        "kapakaiHalloween.ts",
+        "kapakaiHalloweenSync.ts",
         "servoDriver.ts",
         "motionPlayer.ts",
         "motions.ts"
