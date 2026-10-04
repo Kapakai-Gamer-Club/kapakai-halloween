@@ -1,11 +1,11 @@
-//% weight=100 color="#00A6FF" icon="\uf085" block="Kapakai Robot"
+//% block="Kapakai Robot" weight=100 color="#00A6FF" icon="\uf085" 
 namespace kapakai {}
 
-//% color="#FF7518" icon="\uf6e8" block="Kapakai Halloween"
+//% block="Kapakai Halloween" color="#FF7518" icon="\uf6e8" 
 namespace kapakai.halloween {}
 
-//% color="#269a6f" icon="\uf6e7" block="Kapakai Sync"
+//% block="Kapakai Sync" color="#269a6f" icon="\uf6e7" 
 namespace kapakai.sync {}
 
-//% color="#6c5ce7" icon="\uf1eb" block="Kapakai Radio"
+//% block="Kapakai Radio" color="#6c5ce7" icon="\uf1eb" 
 namespace kapakai.radioControl {}
