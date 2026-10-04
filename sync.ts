@@ -1,4 +1,4 @@
-//% block="Kapakai Sync" color="#269a6f" icon="\uf6e7"
+//% block="Kapakai Sync" color="#269a6f" icon="\uf25b"
 namespace kapakai.sync {
 
     let pendingMotion = ""

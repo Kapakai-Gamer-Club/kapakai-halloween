@@ -1,4 +1,4 @@
-//% block="Kapakai Radio" color="#6c5ce7" icon="\uf1eb"
+//% block="Kapakai Radio" color="#6c5ce7" icon="\uf27a" 
 namespace kapakai.radioControl {
 
     // ---------------------------------------------------------
