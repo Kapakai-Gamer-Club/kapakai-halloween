@@ -1,3 +1,4 @@
+//% block="Kapakai Robot" weight=100 color="#00A6FF" icon="\uf25b" 
 namespace servoDriver {
 
     // Dirección I2C del PCA9685 en la placa para servos
