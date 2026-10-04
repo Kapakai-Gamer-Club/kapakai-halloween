@@ -1,3 +1,4 @@
+//% block="Kapakai Radio" color="#6c5ce7" icon="\uf1eb"
 namespace kapakai.radioControl {
 
     // ---------------------------------------------------------
@@ -87,7 +88,7 @@ namespace kapakai.radioControl {
             if (cmd == "BREATHING") kapakai.playSpecial(kapakai.MotionSpecial.Breathing)
 
             // SERVO
-            if (cmd.startsWith("SERVO:")) {
+            if (cmd.substr(0, 6) == "SERVO:") {
                 let parts = cmd.split(":")
                 let index = parseInt(parts[1])
                 let angle = parseInt(parts[2])

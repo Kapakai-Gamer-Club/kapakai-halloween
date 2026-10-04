@@ -1,3 +1,4 @@
+//% weight=100 color=#00A6FF icon="\uf085" block="Kapakai Robot"
 namespace kapakai {
 
     // ---------------------------------------------------------

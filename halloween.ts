@@ -1,3 +1,4 @@
+//% color="#FF7518" icon="\uf6e8" block="Kapakai Halloween"
 namespace kapakai.halloween {
 
     let personalGroup = 1

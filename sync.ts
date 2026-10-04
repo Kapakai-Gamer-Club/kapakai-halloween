@@ -1,4 +1,4 @@
-//% block="Kapakai Sync" color="#FF9F43" icon="\uf6e7"
+//% block="Kapakai Sync" color="#269a6f" icon="\uf6e7"
 namespace kapakai.sync {
 
     let pendingMotion = ""
@@ -53,7 +53,7 @@ namespace kapakai.sync {
         radio.onReceivedString(function (cmd: string) {
 
             // STEP → guardar movimiento
-            if (cmd.startsWith("STEP:")) {
+            if (cmd.substr(0, 5) == "STEP:") {
                 pendingMotion = cmd.substr(5)
                 kapakai.playSpecial(kapakai.MotionSpecial.Neutral)
             }
