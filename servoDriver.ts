@@ -1,6 +1,6 @@
 namespace servoDriver {
 
-    // Dirección I2C del PCA9685 en la placa Kitronik
+    // Dirección I2C del PCA9685 en la placa para servos
     const PCA_ADDR = 0x6A
 
     // Registro base para los canales de servo

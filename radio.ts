@@ -1,7 +1,7 @@
-namespace kapakai.radio {
+namespace kapakaiRadio {
 
     // ---------------------------------------------------------
-    // ENUM PARA DROPDOWN DE COMANDOS DE RADIO
+    // ENUM PARA DROPDOWN
     // ---------------------------------------------------------
 
     //% block="Radio Command"
@@ -23,11 +23,11 @@ namespace kapakai.radio {
 
     //% block="radio kapakai iniciar grupo %group"
     export function init(group: number) {
-        radio.setGroup(group)
+        radio.setGroupNumber(group)
     }
 
     // ---------------------------------------------------------
-    // ENVIAR COMANDO DESDE DROPDOWN
+    // ENVIAR COMANDO
     // ---------------------------------------------------------
 
     //% block="radio kapakai enviar movimiento %cmd"
@@ -50,7 +50,7 @@ namespace kapakai.radio {
     }
 
     // ---------------------------------------------------------
-    // BLOQUE NUEVO: ENVIAR SERVO + ÁNGULO POR RADIO
+    // ENVIAR SERVO + ÁNGULO
     // ---------------------------------------------------------
 
     //% block="radio kapakai enviar servo %index ángulo %angle"
@@ -61,16 +61,13 @@ namespace kapakai.radio {
     }
 
     // ---------------------------------------------------------
-    // RECEPTOR DE COMANDOS
+    // RECEPTOR
     // ---------------------------------------------------------
 
     //% block="radio kapakai activar movimientos"
     export function enableReceiver() {
-        radio.onReceivedString(function (cmd) {
 
-            // -----------------------------------------
-            // COMANDOS DE MOVIMIENTO (dropdown seguro)
-            // -----------------------------------------
+        radio.onReceivedString(function (cmd: string) {
 
             // BASIC
             if (cmd == "WALK_FORWARD") kapakai.playBasic(kapakai.MotionBasic.WalkForward)
@@ -89,10 +86,7 @@ namespace kapakai.radio {
             if (cmd == "NEUTRAL") kapakai.playSpecial(kapakai.MotionSpecial.Neutral)
             if (cmd == "BREATHING") kapakai.playSpecial(kapakai.MotionSpecial.Breathing)
 
-            // -----------------------------------------
-            // COMANDO LIBRE: SERVO + ÁNGULO
-            // -----------------------------------------
-
+            // SERVO
             if (cmd.startsWith("SERVO:")) {
                 let parts = cmd.split(":")
                 let index = parseInt(parts[1])

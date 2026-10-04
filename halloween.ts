@@ -1,10 +1,10 @@
 namespace kapakai.halloween {
 
-    let personalGroup = 0      // grupo del joven
-    let eventGroup = 99        // grupo global del evento
-    let witchGroup = 55        // grupo de la bruja / zona zombie
+    let personalGroup = 0
+    let eventGroup = 99
+    let witchGroup = 55
 
-    let mode = "NORMAL"        // NORMAL / EVENT / WITCH
+    let mode = "NORMAL"   // NORMAL / EVENT / WITCH
 
     // ---------------------------------------------------------
     // CONFIGURAR GRUPOS
@@ -13,7 +13,7 @@ namespace kapakai.halloween {
     //% block="kapakai Halloween set grupo personal %group"
     export function setPersonalGroup(group: number) {
         personalGroup = group
-        radio.setGroup(group)
+        radio.setGroupNumber(group)
     }
 
     //% block="kapakai Halloween set grupo evento %group"
@@ -33,61 +33,40 @@ namespace kapakai.halloween {
     //% block="kapakai Halloween activar sistema"
     export function enableHalloweenSystem() {
 
-        radio.onReceivedString(function (cmd) {
+        radio.onReceivedString(function (cmd: string) {
 
-            // -------------------------------------------------
-            // 1. ENTRAR EN ZONA ZOMBIE (POSESIÓN)
-            // -------------------------------------------------
-
+            // 1. ENTRAR EN ZONA ZOMBIE
             if (cmd == "ENTER_ZOMBIE_ZONE") {
                 mode = "WITCH"
-                radio.setGroup(witchGroup)
-
-                // movimiento de peligro
+                radio.setGroupNumber(witchGroup)
                 kapakai.playZombie(kapakai.MotionZombie.ZombieWalk)
             }
 
-            // -------------------------------------------------
-            // 2. LIBERACIÓN POR PALANCA / PUZZLE
-            // -------------------------------------------------
-
+            // 2. LIBERACIÓN
             if (cmd == "LEVER_RECOVER") {
                 mode = "NORMAL"
-                radio.setGroup(personalGroup)
-
-                // movimiento de celebración
+                radio.setGroupNumber(personalGroup)
                 kapakai.playZombie(kapakai.MotionZombie.LiberationJoy)
             }
 
-            // -------------------------------------------------
-            // 3. EVENTO GLOBAL (POSESIÓN MASIVA)
-            // -------------------------------------------------
-
+            // 3. EVENTO GLOBAL
             if (cmd == "EVENT_OVERRIDE") {
                 mode = "EVENT"
-                radio.setGroup(eventGroup)
-
+                radio.setGroupNumber(eventGroup)
                 kapakai.playSpecial(kapakai.MotionSpecial.Neutral)
             }
 
-            // -------------------------------------------------
             // 4. FIN DEL EVENTO GLOBAL
-            // -------------------------------------------------
-
             if (cmd == "EVENT_END") {
                 mode = "NORMAL"
-                radio.setGroup(personalGroup)
-
+                radio.setGroupNumber(personalGroup)
                 kapakai.playZombie(kapakai.MotionZombie.LiberationJoy)
             }
 
-            // -------------------------------------------------
-            // 5. COMANDOS SEGÚN EL MODO
-            // -------------------------------------------------
+            // 5. COMANDOS SEGÚN MODO
 
-            // MODO BRUJA / ZOMBIE
+            // MODO BRUJA
             if (mode == "WITCH") {
-
                 if (cmd == "ZOMBIE_WALK")
                     kapakai.playZombie(kapakai.MotionZombie.ZombieWalk)
 
@@ -100,15 +79,11 @@ namespace kapakai.halloween {
 
             // MODO EVENTO GLOBAL
             if (mode == "EVENT") {
-
                 if (cmd == "GLOBAL_STEP")
                     kapakai.playSpecial(kapakai.MotionSpecial.Breathing)
             }
 
-            // MODO NORMAL
-            if (mode == "NORMAL") {
-                // El robot escucha solo al joven (grupo personal)
-            }
+            // MODO NORMAL → no hace nada especial
         })
     }
 }

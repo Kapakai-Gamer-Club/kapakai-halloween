@@ -114,6 +114,6 @@ namespace kapakai.sync {
 }
 
 //% block="Kapakai Radio" color="#6c5ce7" icon="\uf1eb"
-namespace kapakai.radio {
+namespace kapakaiRadio {
     // bloques de radio
 }

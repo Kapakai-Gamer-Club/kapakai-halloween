@@ -1,21 +1,22 @@
+//% block="Kapakai Sync" color="#FF9F43" icon="\uf6e7"
 namespace kapakai.sync {
 
-    let pendingMotion = ""   // movimiento pendiente de ejecutar
+    let pendingMotion = ""
 
     // ---------------------------------------------------------
     // INICIALIZAR RADIO
     // ---------------------------------------------------------
 
-    //% block="kapakai Halloween Sync iniciar grupo %group"
+    //% block="Kapakai Sync iniciar grupo %group"
     export function init(group: number) {
-        radio.setGroup(group)
+        radio.setGroupNumber(group)
     }
 
     // ---------------------------------------------------------
-    // TRANSMISOR: ENVIAR PASO DE COREOGRAFÍA
+    // ENVIAR PASO
     // ---------------------------------------------------------
 
-    //% block="kapakai Halloween Sync enviar paso %cmd"
+    //% block="Kapakai Sync enviar paso %cmd"
     export function sendStep(cmd: kapakai.MotionZombie) {
 
         let text = ""
@@ -34,50 +35,39 @@ namespace kapakai.sync {
     }
 
     // ---------------------------------------------------------
-    // TRANSMISOR: ENVIAR TICK DE SINCRONIZACIÓN
+    // ENVIAR TICK
     // ---------------------------------------------------------
 
-    //% block="kapakai Halloween Sync enviar TICK"
+    //% block="Kapakai Sync enviar TICK"
     export function sendTick() {
         radio.sendString("TICK")
     }
 
     // ---------------------------------------------------------
-    // RECEPTOR: ACTIVAR COREOGRAFÍAS SINCRONIZADAS
+    // RECEPTOR
     // ---------------------------------------------------------
 
-    //% block="kapakai Halloween Sync activar coreografías"
+    //% block="Kapakai Sync activar coreografías"
     export function enableReceiver() {
 
-        radio.onReceivedString(function (cmd) {
+        radio.onReceivedString(function (cmd: string) {
 
-            // -----------------------------------------
-            // PASO DE COREOGRAFÍA (se guarda)
-            // -----------------------------------------
-
+            // STEP → guardar movimiento
             if (cmd.startsWith("STEP:")) {
-
                 pendingMotion = cmd.substr(5)
-
-                //  RESET AUTOMÁTICO ANTES DEL TICK
                 kapakai.playSpecial(kapakai.MotionSpecial.Neutral)
             }
 
-            // -----------------------------------------
-            // TICK → ejecutar movimiento pendiente
-            // -----------------------------------------
-
+            // TICK → ejecutar movimiento
             if (cmd == "TICK" && pendingMotion != "") {
 
-                //  MOVIMIENTO ZOMBIE (PELIGRO)
                 if (pendingMotion == "ZOMBIE_WALK")
                     kapakai.playZombie(kapakai.MotionZombie.ZombieWalk)
 
-                //  MOVIMIENTO DE LIBERACIÓN (GOZO)
                 if (pendingMotion == "LIBERATION_JOY")
                     kapakai.playZombie(kapakai.MotionZombie.LiberationJoy)
 
-                pendingMotion = "" // limpiar
+                pendingMotion = ""
             }
         })
     }
