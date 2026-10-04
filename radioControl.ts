@@ -4,7 +4,7 @@ namespace kapakai.radioControl {
     // ---------------------------------------------------------
     // ENUM PARA DROPDOWN
     // ---------------------------------------------------------
-
+    //% group="Config"
     //% block="Radio Command"
     export enum RadioCommand {
         WalkForward,
@@ -21,7 +21,7 @@ namespace kapakai.radioControl {
     // ---------------------------------------------------------
     // INICIALIZAR RADIO
     // ---------------------------------------------------------
-
+    //% group="Config"
     //% block="radio kapakai iniciar grupo %group"
     export function init(group: number) {
         radio.setGroup(group || 1)
@@ -30,7 +30,7 @@ namespace kapakai.radioControl {
     // ---------------------------------------------------------
     // ENVIAR COMANDO
     // ---------------------------------------------------------
-
+    //% group="Send coreography instructions"
     //% block="radio kapakai enviar movimiento %cmd"
     export function sendCommand(cmd: RadioCommand) {
         switch(cmd) {
@@ -53,7 +53,7 @@ namespace kapakai.radioControl {
     // ---------------------------------------------------------
     // ENVIAR SERVO + ÁNGULO
     // ---------------------------------------------------------
-
+    //% group="Send customized movement instructions"
     //% block="radio kapakai enviar servo %index ángulo %angle"
     //% index.min=0 index.max=7
     //% angle.min=-90 angle.max=90
@@ -64,7 +64,7 @@ namespace kapakai.radioControl {
     // ---------------------------------------------------------
     // RECEPTOR
     // ---------------------------------------------------------
-
+    //% group="Receive movement instructions"
     //% block="radio kapakai activar movimientos"
     export function enableReceiver() {
 

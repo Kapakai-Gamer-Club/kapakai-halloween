@@ -6,7 +6,7 @@ namespace kapakai.sync {
     // ---------------------------------------------------------
     // INICIALIZAR RADIO
     // ---------------------------------------------------------
-
+    //% group="Config syncronization"
     //% block="Kapakai Sync iniciar grupo %group"
     export function init(group: number) {
         radio.setGroup(group || 1)
@@ -15,7 +15,7 @@ namespace kapakai.sync {
     // ---------------------------------------------------------
     // ENVIAR PASO
     // ---------------------------------------------------------
-
+    //% group="Send syncronized moves"
     //% block="Kapakai Sync enviar paso %cmd"
     export function sendStep(cmd: kapakai.MotionZombie) {
 
@@ -37,7 +37,7 @@ namespace kapakai.sync {
     // ---------------------------------------------------------
     // ENVIAR TICK
     // ---------------------------------------------------------
-
+    //% group="Prepare for syncronization"
     //% block="Kapakai Sync enviar TICK"
     export function sendTick() {
         radio.sendString("TICK")
@@ -46,7 +46,7 @@ namespace kapakai.sync {
     // ---------------------------------------------------------
     // RECEPTOR
     // ---------------------------------------------------------
-
+    //% group="Activate coreography"
     //% block="Kapakai Sync activar coreografías"
     export function enableReceiver() {
 

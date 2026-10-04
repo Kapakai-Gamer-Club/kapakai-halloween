@@ -1,4 +1,4 @@
-//% color="#FF7518" icon="\uf6e8" block="Kapakai Halloween"
+//% block="Kapakai Halloween" color="#FF7518" icon="\uf6e8" 
 namespace kapakai.halloween {
 
     let personalGroup = 1
@@ -10,18 +10,18 @@ namespace kapakai.halloween {
     // ---------------------------------------------------------
     // CONFIGURAR GRUPOS
     // ---------------------------------------------------------
-
+    //% group="Config"
     //% block="kapakai Halloween set grupo personal %group"
     export function setPersonalGroup(group: number) {
         personalGroup = group
         radio.setGroup(group)
     }
-
+    //% group="Config"
     //% block="kapakai Halloween set grupo evento %group"
     export function setEventGroup(group: number) {
         eventGroup = group
     }
-
+    //% group="Config"
     //% block="kapakai Halloween set grupo bruja %group"
     export function setWitchGroup(group: number) {
         witchGroup = group
@@ -30,7 +30,7 @@ namespace kapakai.halloween {
     // ---------------------------------------------------------
     // ACTIVAR SISTEMA HALLOWEEN
     // ---------------------------------------------------------
-
+    //% group="Halloween"
     //% block="kapakai Halloween activar sistema"
     export function enableHalloweenSystem() {
 
