@@ -8,6 +8,7 @@
     "files": [
         "main.ts",
         "index.ts",
+        "kapakai.ts",
         "halloween.ts",
         "sync.ts",
         "radioControl.ts",
