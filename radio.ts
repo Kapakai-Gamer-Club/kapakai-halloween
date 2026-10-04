@@ -1,4 +1,4 @@
-namespace kapakaiRadio {
+namespace kapakai.radioControl {
 
     // ---------------------------------------------------------
     // ENUM PARA DROPDOWN
