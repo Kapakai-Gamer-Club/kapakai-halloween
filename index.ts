@@ -98,3 +98,17 @@ namespace kapakai {
         }
     }
 }
+
+// ---------------------------------------------------------
+// NUEVAS CATEGORÍAS PARA HALLOWEEN
+// ---------------------------------------------------------
+
+//% color="#FF7518" icon="\uf6e8" block="Kapakai Halloween"
+namespace kapakaiHalloween {
+    // vacío — MakeCode solo necesita ver el namespace
+}
+
+//% color="#FF9F43" icon="\uf6e7" block="Kapakai Halloween Sync"
+namespace kapakaiHalloweenSync {
+    // vacío — MakeCode solo necesita ver el namespace
+}
