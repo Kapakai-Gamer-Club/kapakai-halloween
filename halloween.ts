@@ -1,6 +1,6 @@
 namespace kapakai.halloween {
 
-    let personalGroup = 0
+    let personalGroup = 1
     let eventGroup = 99
     let witchGroup = 55
 
@@ -13,7 +13,7 @@ namespace kapakai.halloween {
     //% block="kapakai Halloween set grupo personal %group"
     export function setPersonalGroup(group: number) {
         personalGroup = group
-        radio.setGroupNumber(group)
+        radio.setGroup(group)
     }
 
     //% block="kapakai Halloween set grupo evento %group"
@@ -38,28 +38,28 @@ namespace kapakai.halloween {
             // 1. ENTRAR EN ZONA ZOMBIE
             if (cmd == "ENTER_ZOMBIE_ZONE") {
                 mode = "WITCH"
-                radio.setGroupNumber(witchGroup)
+                radio.setGroup(witchGroup)
                 kapakai.playZombie(kapakai.MotionZombie.ZombieWalk)
             }
 
             // 2. LIBERACIÓN
             if (cmd == "LEVER_RECOVER") {
                 mode = "NORMAL"
-                radio.setGroupNumber(personalGroup)
+                radio.setGroup(personalGroup)
                 kapakai.playZombie(kapakai.MotionZombie.LiberationJoy)
             }
 
             // 3. EVENTO GLOBAL
             if (cmd == "EVENT_OVERRIDE") {
                 mode = "EVENT"
-                radio.setGroupNumber(eventGroup)
+                radio.setGroup(eventGroup)
                 kapakai.playSpecial(kapakai.MotionSpecial.Neutral)
             }
 
             // 4. FIN DEL EVENTO GLOBAL
             if (cmd == "EVENT_END") {
                 mode = "NORMAL"
-                radio.setGroupNumber(personalGroup)
+                radio.setGroup(personalGroup)
                 kapakai.playZombie(kapakai.MotionZombie.LiberationJoy)
             }
 

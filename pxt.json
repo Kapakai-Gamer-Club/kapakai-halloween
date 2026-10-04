@@ -10,7 +10,7 @@
         "index.ts",
         "halloween.ts",
         "sync.ts",
-        "radio.ts",
+        "radioControl.ts",
         "servoDriver.ts",
         "motionPlayer.ts",
         "motions.ts"

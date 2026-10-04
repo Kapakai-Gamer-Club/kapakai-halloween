@@ -23,7 +23,7 @@ namespace kapakai.radioControl {
 
     //% block="radio kapakai iniciar grupo %group"
     export function init(group: number) {
-        radio.setGroupNumber(group)
+        radio.setGroup(group || 1)
     }
 
     // ---------------------------------------------------------
